@@ -55,7 +55,6 @@ Codev is a web-based, real-time collaborative code editor designed to enhance te
 ### Video Call Section
 - **Local Video**: Displays the user's webcam feed, toggleable on/off.
 - **Remote Video**: Displays the webcam feed of other users in the room.
-- **Close Video Buttons**: Option to hide local or remote video feeds.
 
 ---
 
