@@ -1,3 +1,5 @@
+/*780000 , C1121F , FDF0D5,003049,669BBC*/
+
 *{
   margin:0;
   padding:0;
@@ -6,44 +8,50 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f0f2f5;
+  background-color: #ffffff;
   color: #333;
 }
 
-.join-container{
+.join-container {
   display: flex;
+  flex-direction: column; /* Stack children vertically */
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #011727;
 }
 
-.join-form{
-  background-color: white;
+
+.join-form {
+  background-color:  #669BBC;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  width: 300px;
+  box-shadow: 0 4px 6px rgba(235, 7, 7, 0.1);
+  width: 400px;
+  position: relative;
 }
 
+
 h1{
+ 
+  text-align: center;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #000000;
 }
 
 input {
   width:100%;
   padding: .75rem;
   margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 0.5px solid #ddd;
+  border-radius: 2px;
   font-size: 1rem;
 }
 
-button{
+.joinroom-button{
   width:100%;
   padding: 0.75rem;
-  background-color: #4a90e4;
+  background-color: #003049;
   color:white;
   border: none;
   border-radius: 4px;
@@ -52,8 +60,29 @@ button{
   transition: background-color 0.3s ease;
 }
 
-button ::hover{
-  background-color: #357bd8;
+.joinroom-button ::hover{
+  background-color: #5fbef1;
+}
+
+.createInfo{  
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.createNewBtn{
+  color: #000000;
+  text-decoration: none;
+  border-bottom:1px solid #000000; 
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.createNewBtn:hover{
+  color:#feffff;
+  border-bottom: #ffffff;
 }
 
 .editor-container {
@@ -63,8 +92,9 @@ button ::hover{
 .sidebar{
   width: 250px;
   padding: 1.5rem;
-background-color: #233e50;
-color: #ecf0f1;
+  background-color:#FDF0D5;
+  color: #ecf0f1;
+  
 
 }
 
@@ -78,50 +108,90 @@ color: #ecf0f1;
 
 h2{
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: #000000;
 }
 .copy-button {
   padding: 0.5rem 1rem;
-background-color: #3498bd;
-color: white;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-transition: background-color 0.3s ease;
+  background-color: #011627;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .copy-button:hover{
-  background-color: #2579a9;
+  background-color:#043054;
 }
-h3{
-  margin-top: 15rem;
-  margin-bottom: 0.5rem;
+.userintheroom{
+  text-align: center;
+  margin-top: 1rem;
+
   font-size: 1rem;
+  color: #011627;
+
 
 }
-
-ul{
+/* 
+.listofusers {
   list-style: none;
   padding: 0.5rem;
   font-size: 0.9rem;
-  background: gray;
+  background-color: #003049;
   margin-top: 5px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+gap:20px
 }
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #003049;
+  padding: 5px;
+}
+ */
+ .listofusers {
+  list-style: none;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  background-color: #011627;
+  margin-top: 5px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-name {
+  flex: 1;
+  color: white;
+}
+
 
 .typing-indicator{
   margin-top: 1rem;
   font-size: 1rem;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .language-selector{
-  margin-top: 1rem;
+  margin-top: 11rem;
   width: 100%;
   padding: 0.5rem;
-  background-color: #34495e;
-  color: white;
-  border: none;
+  background-color:#FDF0D5;
+  color: rgb(0, 0, 0);
+  border-style: groove;
   border-radius: 4px;
 }
 
@@ -129,7 +199,7 @@ ul{
   margin-top: 1rem;
   width: 100%;
   padding: 0.75rem;
-  background-color: #e74c3c;
+  background-color: #C1121F;
   color: white;
   border: none;
   border-radius:5px ;
@@ -153,3 +223,167 @@ ul{
   margin-left: 0.5rem;
  
 }
+
+/* Video Container Styling */
+.video-container {
+  position: fixed;
+  top: 10%;
+  right: -120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 15px;
+  z-index: 100;
+  width: 320px;
+  max-height: 500px;
+}
+
+/* Local and Remote Video Styling */
+.local-video, .remote-video {
+  width: 58%;
+  max-width: 300px;
+  height: auto;
+  background: linear-gradient(135deg, #011627 0%, #003049 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid #003049;
+  overflow: hidden;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.local-video{
+ transform: scaleX(-1);
+}
+.remote-video {
+  transform: scaleX(-1);
+}
+
+/* Video Element */
+.local-video video, .remote-video video {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 8px;
+  transform: scaleX(-1); /* Mirror the local video */
+}
+
+/* Close Button Styling */
+.close-video-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 200;
+  transition: background-color 0.3s ease;
+}
+
+.close-video-btn:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.call-button {
+  background-color: green;
+  color: white;
+  height: 40px;
+  width: 60px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-left: 10px;
+}
+
+.call-button:hover {
+  background-color: darkgreen;
+}
+.theme-toggle-btn {
+  position:fixed;
+  top: 20px; /* Adjust vertical position */
+  right: 20px; /* Adjust horizontal position */
+  width: 50px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle-btn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-toggle-btn .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff; /* Default background for dark theme */
+  border-radius: 15px;
+  transition: 0.4s;
+}
+
+.theme-toggle-btn .slider:before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 22px;
+  height: 22px;
+  background-color: #000000; /* Default circle color for dark theme */
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* When toggled (input checked) */
+.theme-toggle-btn input:checked + .slider {
+  background-color: #fff; /* Change background for light theme */
+}
+
+.theme-toggle-btn input:checked + .slider:before {
+  transform: translateX(20px);
+  background-color: #000; /* Change circle color to black for light theme */
+}
+
+/* For light theme */
+body.light .theme-toggle-btn .slider {
+  background-color: #121212; /* Light theme background */
+}
+
+body.light .theme-toggle-btn .slider:before {
+  background-color: #ffffff; /* Light theme circle */
+}
+
+/* Style the editor when in light theme */
+body.light .monaco-editor {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+/* Style the editor when in dark theme */
+body.dark .monaco-editor {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+
+
+
+/*
+
+-----------------------FINAL-------------------------------------------------->
+
+*/
